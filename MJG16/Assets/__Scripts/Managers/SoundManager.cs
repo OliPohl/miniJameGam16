@@ -9,8 +9,10 @@ public class SoundManager : MonoBehaviour
     
     public Settings _settings;
 
-    private AudioSource sfxAudioSource;
+    private AudioSource cameraAudioSource;
     private GameObject audioPlayer;
+    private AudioSource musicSource;
+    private AudioClip currentMusic;
 
 
     private void Awake()
@@ -27,29 +29,46 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        sfxAudioSource = Camera.main.gameObject.AddComponent<AudioSource>();
+        cameraAudioSource = Camera.main.gameObject.AddComponent<AudioSource>();
+
+        GameObject musicPlayer = new GameObject("MusicPlayer");
+        musicPlayer.transform.SetParent(Camera.main.transform);
+        musicSource = musicPlayer.AddComponent<AudioSource>();
     }
 
 
     private void PlayAudio(AudioClip AudioClip)                 // use this to play audio that has no position
     {
-        if (sfxAudioSource != null && AudioClip != null)
-            sfxAudioSource.volume = _settings.MasterVolume;
-            sfxAudioSource.PlayOneShot(AudioClip);
+        if (cameraAudioSource != null && AudioClip != null)
+            cameraAudioSource.volume = _settings.MasterVolume;
+            cameraAudioSource.PlayOneShot(AudioClip);
     }
 
 
     private void PlayAudioAtPosition(AudioClip AudioClip, Vector3 AudioPosition)    // use this for Audio that comes from a specific location
     {
         if (AudioClip != null  && AudioPosition != null)
-            {
-                GameObject CurrentAudioPlayer = Instantiate(new GameObject("AudioPlayer"), AudioPosition, Quaternion.identity);
-                CurrentAudioPlayer.AddComponent<DestroyLater>();
+        {
+            GameObject CurrentAudioPlayer = Instantiate(new GameObject("AudioPlayer"), AudioPosition, Quaternion.identity);
+            CurrentAudioPlayer.AddComponent<DestroyLater>();
 
-                AudioSource CurrentAudioSource = CurrentAudioPlayer.AddComponent<AudioSource>();
-                CurrentAudioSource.volume = _settings.MasterVolume;
-                CurrentAudioSource.PlayOneShot(AudioClip);
-            }
+            AudioSource CurrentAudioSource = CurrentAudioPlayer.AddComponent<AudioSource>();
+            CurrentAudioSource.volume = _settings.MasterVolume;
+            CurrentAudioSource.PlayOneShot(AudioClip);
+        }
+    }
+
+
+    private void PlayMusic(AudioClip AudioClip)
+    {
+        if (musicSource != null && AudioClip != null && AudioClip != currentMusic)
+        {
+            musicSource.volume = _settings.MasterVolume;
+
+            musicSource.clip = AudioClip;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
     }
 
 
