@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     [field: SerializeField] private bool _drawDebugGizmos = true;
     [field: SerializeField] private  PlayerInventory _playerInventory;
 
-    private IInteractable interactableObject;
+    public static IInteractable interactableObject { get; private set; }
 
 
     private void OnInteract(InputAction.CallbackContext context)
