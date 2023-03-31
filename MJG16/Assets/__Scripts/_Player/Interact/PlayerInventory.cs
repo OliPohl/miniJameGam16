@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [field: SerializeField] private bool _drawDebugGizmos = true;
     public GameObject Item { get; private set; }
     public static PlayerInventory Instance;
+    public float throwPower = 5f;
 
 
     private void Awake()
@@ -41,6 +42,17 @@ public class PlayerInventory : MonoBehaviour
             Item.transform.SetParent(transform);
             Item.GetComponentsInChildren<Collider>().Any(x => x.enabled = false);
         }
+    }
+
+
+    public void ThrowObject(GameObject Obj)
+    {
+        Rigidbody objRB = Obj.transform.GetComponent<Rigidbody>();
+        objRB.isKinematic = false;
+        Obj.transform.gameObject.GetComponentsInChildren<Collider>().Any(x => x.enabled = true);
+
+        Obj.transform.SetParent(null);
+        objRB.AddForce(transform.forward * throwPower);
     }
 
 
