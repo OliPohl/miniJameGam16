@@ -28,7 +28,6 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         sfxAudioSource = Camera.main.gameObject.AddComponent<AudioSource>();
-        audioPlayer = new GameObject();
     }
 
 
@@ -44,7 +43,7 @@ public class SoundManager : MonoBehaviour
     {
         if (AudioClip != null  && AudioPosition != null)
             {
-                GameObject CurrentAudioPlayer = Instantiate(audioPlayer, AudioPosition, Quaternion.identity);
+                GameObject CurrentAudioPlayer = Instantiate(new GameObject("audioPlayer"), AudioPosition, Quaternion.identity);
                 CurrentAudioPlayer.AddComponent<DestroyLater>();
 
                 AudioSource CurrentAudioSource = CurrentAudioPlayer.AddComponent<AudioSource>();
