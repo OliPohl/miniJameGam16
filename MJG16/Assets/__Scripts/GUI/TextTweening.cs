@@ -16,6 +16,18 @@ public class TextTweening : MonoBehaviour
     }
 
 
+    private void FixedUpdate()
+    {
+        if (_isTweening)
+            Tween(Time.fixedDeltaTime);
+        
+        if(PlayerInteract.interactableObject != null)
+            SetText(PlayerInteract.interactableObject.Data());
+        else
+            SetText("---");
+    }
+
+
     public void SetText(string text)
     {
         if (text == null || _textMesh.text == text)
@@ -49,17 +61,5 @@ public class TextTweening : MonoBehaviour
                 _isTweening = _textMesh.text.Length != Text.Length;
             }
         }
-    }
-
-    
-    private void FixedUpdate()
-    {
-        if (_isTweening)
-            Tween(Time.fixedDeltaTime);
-        
-        if(PlayerInteract.interactableObject != null)
-            SetText(PlayerInteract.interactableObject.Data());
-        else
-            SetText("---");
     }
 }
