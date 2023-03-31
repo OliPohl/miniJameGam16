@@ -52,6 +52,7 @@ public class PlayerInventory : MonoBehaviour
         Obj.transform.gameObject.GetComponentsInChildren<Collider>().Any(x => x.enabled = true);
 
         Obj.transform.SetParent(null);
+        Item = null;
         objRB.AddForce(transform.forward * throwPower);
     }
 
