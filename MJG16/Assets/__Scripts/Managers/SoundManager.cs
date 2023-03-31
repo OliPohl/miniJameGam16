@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SoundManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
-=======
 using UnityEngine;
 
 
@@ -112,4 +92,3 @@ public class SoundManager : MonoBehaviour
     // in the line where you want to play audio at a specific location:
     // -
     // SoundManager.Instance.PlayAudioAtPosition(_audioClips.SOUND, VECTOR3_LOCATION);
->>>>>>> fa1039c67a2ad716b9dffa002e563a58f61e9466
