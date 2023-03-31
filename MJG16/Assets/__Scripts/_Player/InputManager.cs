@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Awake() {
+        // INSTANCE ? 
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        
+        if(context.performed)
+        {
+            PlayerController.Instance.PlayerDirection= context.ReadValue<Vector2>();
+            
+        }
     }
-}
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            // gamemanager.paused()
+        }
+    }
+    public void OnActions(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            // playerController.Action[x]();
+        }
+    }
+ }
