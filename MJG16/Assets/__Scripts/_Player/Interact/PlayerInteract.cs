@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     [field: SerializeField] private bool _drawDebugGizmos = true;
     [field: SerializeField] private  PlayerInventory _playerInventory;
 
-    private IInteractable interactableObject;
+    public static IInteractable interactableObject { get; private set; }
 
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -29,9 +29,9 @@ public class PlayerInteract : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerStay(Collider other) 
     {
-        if(other.tag == "Interactable" && other != _playerInventory.Item)
+        if(other.tag == "Interactable")
         {
             interactableObject = other.GetComponent<IInteractable>();
         }
@@ -40,7 +40,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if(other.tag == "Interactable" && other != _playerInventory.Item)
+        if(other.tag == "Interactable")
         {
             interactableObject = null;
         }
