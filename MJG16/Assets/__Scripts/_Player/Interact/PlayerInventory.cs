@@ -73,7 +73,7 @@ public class PlayerInventory : MonoBehaviour
             if(Item != null)
                 Gizmos.color = Color.blue;
 
-            Gizmos.DrawCube(transform.position, transform.localScale);
+            Gizmos.DrawCube(transform.position, new Vector3(0.2f,0.2f,0.2f));
         }
     }
 }
