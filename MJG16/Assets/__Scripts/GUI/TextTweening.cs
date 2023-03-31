@@ -57,6 +57,9 @@ public class TextTweening : MonoBehaviour
         if (_isTweening)
             Tween(Time.fixedDeltaTime);
         
-        SetText(PlayerInteract.interactableObject.Data());
+        if(PlayerInteract.interactableObject != null)
+            SetText(PlayerInteract.interactableObject.Data());
+        else
+            SetText("---");
     }
 }
