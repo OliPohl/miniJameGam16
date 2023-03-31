@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
     {
         if (AudioClip != null  && AudioPosition != null)
             {
-                GameObject CurrentAudioPlayer = Instantiate(new GameObject("audioPlayer"), AudioPosition, Quaternion.identity);
+                GameObject CurrentAudioPlayer = Instantiate(new GameObject("AudioPlayer"), AudioPosition, Quaternion.identity);
                 CurrentAudioPlayer.AddComponent<DestroyLater>();
 
                 AudioSource CurrentAudioSource = CurrentAudioPlayer.AddComponent<AudioSource>();
