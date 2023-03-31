@@ -8,6 +8,7 @@ public class TextTweening : MonoBehaviour
     private bool _isDeleting = true;
     private bool _isTweening = false;
     public float tweenTime = 1f;
+    private IInteractable currentInteractableObject;
 
 
     private void Awake()
@@ -21,10 +22,14 @@ public class TextTweening : MonoBehaviour
         if (_isTweening)
             Tween(Time.fixedDeltaTime);
         
-        if(PlayerInteract.interactableObject != null)
+        if(PlayerInteract.interactableObject != null && PlayerInteract.interactableObject != currentInteractableObject)
+        {
             SetText(PlayerInteract.interactableObject.Data());
-        else
+            currentInteractableObject = PlayerInteract.interactableObject;
+        }
+        if(PlayerInteract.interactableObject == null && PlayerInteract.interactableObject != currentInteractableObject)
             SetText("---");
+            currentInteractableObject = PlayerInteract.interactableObject;
     }
 
 
