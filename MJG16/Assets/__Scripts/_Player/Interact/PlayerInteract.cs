@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Interactable" && other != _playerInventory.Item)
+        if(other.tag == "Interactable")
         {
             interactableObject = other.GetComponent<IInteractable>();
         }
@@ -40,7 +40,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if(other.tag == "Interactable" && other != _playerInventory.Item)
+        if(other.tag == "Interactable")
         {
             interactableObject = null;
         }
