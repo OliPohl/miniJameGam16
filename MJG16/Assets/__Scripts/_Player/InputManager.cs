@@ -5,8 +5,14 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
     private void Awake() {
-        // INSTANCE ? 
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
