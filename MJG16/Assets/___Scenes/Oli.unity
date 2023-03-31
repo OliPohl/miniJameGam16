@@ -5574,10 +5574,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3921866188004186920, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4736156101131929166, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5625,10 +5621,6 @@ PrefabInstance:
     - target: {fileID: 5310002315529777369, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
       propertyPath: m_Name
       value: PlayerInteract
-      objectReference: {fileID: 0}
-    - target: {fileID: 8113207132137846860, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
-      propertyPath: _drawDebugGizmos
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8113207132137846860, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
       propertyPath: _playerInventory
