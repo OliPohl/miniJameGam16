@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void PlayMusic(AudioClip AudioClip)
+    private void ChangeMusic(AudioClip AudioClip)
     {
         if (musicSource != null && AudioClip != null && AudioClip != currentMusic)
         {
