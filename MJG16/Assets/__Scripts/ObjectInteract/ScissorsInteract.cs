@@ -28,7 +28,7 @@ public class ScissorsInteract : MonoBehaviour, IInteractable
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Death")
+        if(other.tag == "Death" && PlayerInventory.Instance.Item?.name == "Scissors")
         {
             ResetPos();
         }
@@ -37,7 +37,6 @@ public class ScissorsInteract : MonoBehaviour, IInteractable
     private void ResetPos()
     {
         transform.SetParent(null);
-        PlayerInventory.Instance.TakeObject(null);
         transform.position = startPos;
     }
 }
