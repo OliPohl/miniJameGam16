@@ -8,7 +8,7 @@ public class ScissorsInteract : MonoBehaviour, IInteractable
 {
     private Vector3 startPos;
     void Start() {
-        transform.position = startPos;
+        startPos = transform.position;
     }
 
     public string Data()

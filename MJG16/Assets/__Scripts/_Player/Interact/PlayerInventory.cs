@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject Item { get; private set; }
     public static PlayerInventory Instance;
     public float throwPower = 1000f;
+    public bool onFire = false;
 
 
     private void Awake()
@@ -72,6 +73,11 @@ public class PlayerInventory : MonoBehaviour
             dir = -1;
 
         objRB.AddForce(dir * throwPower, 0.3f * throwPower, 0f, ForceMode.Acceleration);
+    }
+
+    public void StartFire()
+    {
+        onFire = true;
     }
 
 
