@@ -32,5 +32,17 @@ public class Wood : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if(other.tag == "Player" && PlayerInventory.Instance.Item?.name == "Matchbox")
+            PlayerInventory.Instance.possibleFire = true;
+    }
+
+    void OnTriggerExit(Collider other) 
+    {
+        if(other.tag == "Player" && PlayerInventory.Instance.Item?.name == "Matchbox")
+            PlayerInventory.Instance.possibleFire = false;
+    }
 }
 

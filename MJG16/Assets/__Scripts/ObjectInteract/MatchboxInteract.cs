@@ -7,14 +7,13 @@ using UnityEngine;
 public class MatchboxInteract : MonoBehaviour, IInteractable
 {
     private Vector3 startPos;
-    private bool possibleFire = false;
     void Start() {
         startPos = transform.position;
     }
 
     public string Data()
     {
-        if(PlayerInventory.Instance.Item == gameObject && possibleFire)
+        if(PlayerInventory.Instance.possibleFire)
             return "Light on Fire";
         else if(PlayerInventory.Instance.Item == gameObject)
             return "Drop Matchbox";
@@ -24,41 +23,26 @@ public class MatchboxInteract : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(PlayerInventory.Instance.Item == gameObject)
+        if(PlayerInventory.Instance.Item == gameObject && !(PlayerInventory.Instance.possibleFire))
             PlayerInventory.Instance.TakeObject(null);
-        else if(possibleFire)
+        else if(PlayerInventory.Instance.possibleFire)
         {
             PlayerInventory.Instance.TakeObject(null);
             PlayerInventory.Instance.StartFire();
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f);
         }
         else
             PlayerInventory.Instance.TakeObject(gameObject);
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other);
+        // Debug.Log(other);
         if(other.tag == "Death" && PlayerInventory.Instance.Item?.name == "Matchbox")
         {
             ResetPos();
         }
-        else if(other.tag == "Wood" && PlayerInventory.Instance.Item?.name == "Matchbox")
-        {
-            possibleFire = true;
-        }
-        else
-        {
-            possibleFire = false;
-        }
     }
 
-    private void OnTriggerExit(Collider other) 
-    {
-        if(other.tag == "Wood" && PlayerInventory.Instance.Item?.name == "Matchbox")
-        {
-            possibleFire = false;
-        }
-    }
 
     private void ResetPos()
     {

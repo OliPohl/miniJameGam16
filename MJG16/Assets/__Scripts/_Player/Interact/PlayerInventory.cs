@@ -11,6 +11,7 @@ public class PlayerInventory : MonoBehaviour
     public static PlayerInventory Instance;
     public float throwPower = 1000f;
     public bool onFire = false;
+    public bool possibleFire = false;
 
 
     private void Awake()

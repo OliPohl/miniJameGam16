@@ -10,6 +10,7 @@ TagManager:
   - Book
   - Death
   - CheckPoint
+  - Wood
   layers:
   - Default
   - TransparentFX
