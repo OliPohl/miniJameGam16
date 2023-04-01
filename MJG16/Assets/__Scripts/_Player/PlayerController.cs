@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float PlayerDirection { get; set; }
     public Transform PlayerLastCheckPoint { get; set; }
+    public bool isFacingRight {get;set;} = false;
     public static PlayerController Instance;
     private Animator animator;
     // PLAYER VARS
@@ -19,9 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerFlipModel;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator CameraBlendEffectAnimator;
-    private float Gravity = 9.81f;
-    private float MovementThresholdTimer = 0.0f;
-    private bool isFacingRight = false;
+    // private float Gravity = 9.81f;
+    // private float MovementThresholdTimer = 0.0f;
     public bool isJumping = false;
     private Rigidbody rb;
     private Quaternion localRot = Quaternion.Euler(0, 0, 0);
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         PlayerLastCheckPoint =  new GameObject("StartCheckPoint").transform;
         PlayerLastCheckPoint.position = gameObject.transform.position;
+        
     }
     private void FixedUpdate()
     {
@@ -146,6 +147,7 @@ public class PlayerController : MonoBehaviour
     private void RespawnTransition()
     {
         // EYES CLOSED EFFECT 
+        
         CameraBlendEffectAnimator.Play("RespawnCameraBlending");
     }
     
