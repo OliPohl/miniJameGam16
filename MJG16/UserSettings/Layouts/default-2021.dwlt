@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -404,17 +404,15 @@ MonoBehaviour:
       m_ExpandedIDs: 564effff50beffff64beffff68beffff6cbeffff70beffff74beffff78beffff7cbeffff80beffff88beffffb4beffffc4beffffa2ceffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: TMP SubMeshUI [EsquireGenericGamepdFont_CL Atlas Material + LiberationSans
-          SDF Atlas]
-        m_OriginalName: TMP SubMeshUI [EsquireGenericGamepdFont_CL Atlas Material
-          + LiberationSans SDF Atlas]
+        m_Name: Cube
+        m_OriginalName: Cube
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -114500
+        m_UserData: 28420
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1087,7 +1085,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
