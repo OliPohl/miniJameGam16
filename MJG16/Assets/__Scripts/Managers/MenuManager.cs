@@ -2,37 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MenuManager : MonoBehaviour
 {
-    private GameObject _book;
+    public static MenuManager Instance;
+    public GameObject _book;
 
-
-    void Start() 
+    private void Awake()
     {
-        _book = GameObject.FindGameObjectWithTag("Book");
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-
-    public bool ToggleBook()
+    public void ToggleBook()
     {
-        if(_book.activeSelf = false) 
+        Debug.Log(_book);
+        if(_book.activeSelf == false) 
         {
-            _book.setActive(true);
+            _book.SetActive(true);
+            Time.timeScale = 0f;
+            // playerInput.SwitchCurrentActionMap("UI");
         }
         else
         {
-            _book.setActive(false);
+            _book.SetActive(false);
+            Time.timeScale = 1f;
+            // playerInput.SwitchCurrentActionMap("Player");
         }
     }
 
-    private void OnEnable() {
-        Time.timeScale = 0f;
-        playerInput.SwitchCurrentActionMap("UI");
-    }
-
-
-    private void OnDisable() {
-        Time.timeScale = 1f;
-        playerInput.SwitchCurrentActionMap("Player");
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

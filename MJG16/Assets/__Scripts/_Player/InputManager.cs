@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
@@ -59,6 +60,7 @@ public class InputManager : MonoBehaviour
         if(context.performed)
         {
             Debug.Log("Open Menu");
+            MenuManager.Instance.ToggleBook();
         }
     }
  }
