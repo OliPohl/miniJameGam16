@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlipSpeedLerp: 10
   speed: 5
-  jumpPower: 5
+  jumpPower: 7
   groundcheck: {fileID: 6818532830551138894}
   playerFlipModel: {fileID: 7119064132419137324}
   groundLayer:

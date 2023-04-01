@@ -4,12 +4,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class StoneInteract : MonoBehaviour
+public class StoneInteract : MonoBehaviour, IInteractable
 {
     private PlayerInventory inventory;
 
-    private void Start() {
-        // inventory = PlayerController.Instance.GetComponent<PlayerInventory>();
+    void Start() 
+    {
+        inventory = PlayerInventory.Instance.GetComponent<PlayerInventory>();
     }
     
     public string Data()

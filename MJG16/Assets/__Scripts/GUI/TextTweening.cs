@@ -7,7 +7,7 @@ public class TextTweening : MonoBehaviour
     private float _characterTimer = 0f;
     private bool _isDeleting = true;
     private bool _isTweening = false;
-    public float tweenTime = 1f;
+    public float tweenTime = 0.05f;
     private IInteractable currentInteractableObject;
 
 
