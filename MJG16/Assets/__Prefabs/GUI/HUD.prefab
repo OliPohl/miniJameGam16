@@ -3408,7 +3408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pickup Rock
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3489,7 +3489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe44cd4bbe0ec5745b454e8edfe73028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTime: 1
+  tweenTime: 0.05
 --- !u!1 &424156804388277265
 GameObject:
   m_ObjectHideFlags: 0
@@ -4671,7 +4671,7 @@ GameObject:
   - component: {fileID: 7467866234823997065}
   m_Layer: 5
   m_Name: Book
-  m_TagString: Untagged
+  m_TagString: Book
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

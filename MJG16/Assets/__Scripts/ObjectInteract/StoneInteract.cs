@@ -4,17 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class StoneInteract : MonoBehaviour
+public class StoneInteract : MonoBehaviour, IInteractable
 {
-    private PlayerInventory inventory;
 
-    private void Start() {
-        // inventory = PlayerController.Instance.GetComponent<PlayerInventory>();
-    }
-    
     public string Data()
     {
-        if(inventory.Item == gameObject)
+        if(PlayerInventory.Instance.Item == gameObject)
             return "Throw Stone";
         else
             return "Pickup Stone";
@@ -22,9 +17,9 @@ public class StoneInteract : MonoBehaviour
 
     public void Interact()
     {
-        if(inventory.Item == gameObject)
-            inventory.ThrowObject(gameObject);
+        if(PlayerInventory.Instance.Item == gameObject)
+            PlayerInventory.Instance.ThrowObject(gameObject);
         else
-            inventory.TakeObject(gameObject);
+            PlayerInventory.Instance.TakeObject(gameObject);
     }
 }
