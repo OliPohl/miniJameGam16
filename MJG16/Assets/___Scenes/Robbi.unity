@@ -571,21 +571,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1186498412071517825, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
   m_PrefabInstance: {fileID: 3301313348388085188}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1116103754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116103746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268433d302fd0924c877103c75293ea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ductTapeObject: {fileID: 7705022213118561537, guid: ee01d7f52eab15042b883e5918368f73, type: 3}
-  mousePositions: []
-  maxTapeLength: 100
 --- !u!1 &1260441808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,34 +994,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1116103754}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTaping
-      objectReference: {fileID: 0}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DucttapeDraw, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 704863386, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1186498412071517825, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1159,6 +1116,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4342756507693516164, guid: ee01d7f52eab15042b883e5918368f73, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7705022213118561537, guid: ee01d7f52eab15042b883e5918368f73, type: 3}
       propertyPath: m_Name
       value: DuctTape
