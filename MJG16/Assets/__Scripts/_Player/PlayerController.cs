@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float PlayerDirection { get; set; }
-    
+    public Transform PlayerTransform;
     public static PlayerController Instance;
     private Animator animator;
     // PLAYER VARS
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
+        PlayerTransform = gameObject.transform;
     }
     private void FixedUpdate()
     {
