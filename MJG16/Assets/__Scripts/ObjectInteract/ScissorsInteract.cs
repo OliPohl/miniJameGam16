@@ -37,6 +37,7 @@ public class ScissorsInteract : MonoBehaviour, IInteractable
     private void ResetPos()
     {
         transform.SetParent(null);
+        PlayerInventory.Instance.TakeObject(null);
         transform.position = startPos;
     }
 }
