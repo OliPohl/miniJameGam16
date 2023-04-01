@@ -272,6 +272,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5484349757234709874, guid: 6831b5b8debc82e4ab0bd87f5c3cf2b6, type: 3}
+      propertyPath: throwPower
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484349757234709874, guid: 6831b5b8debc82e4ab0bd87f5c3cf2b6, type: 3}
       propertyPath: _drawDebugGizmos
       value: 0
       objectReference: {fileID: 0}
@@ -1540,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113207132137846860, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
       propertyPath: _drawDebugGizmos
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9ce566203a762849a70addb6ea9963a, type: 3}
