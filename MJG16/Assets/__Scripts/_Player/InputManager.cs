@@ -52,4 +52,13 @@ public class InputManager : MonoBehaviour
             PlayerInteract.Instance.OnInteract();
         }
     }
+
+
+    public void OnMenu(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Debug.Log("Open Menu");
+        }
+    }
  }
