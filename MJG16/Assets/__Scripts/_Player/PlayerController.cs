@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float PlayerDirection { get; set; }
     public Transform PlayerLastCheckPoint { get; set; }
+    
     public static PlayerController Instance;
     private Animator animator;
     // PLAYER VARS
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         PlayerLastCheckPoint =  new GameObject("StartCheckPoint").transform;
         PlayerLastCheckPoint.position = gameObject.transform.position;
+        
     }
     private void FixedUpdate()
     {
@@ -146,6 +148,7 @@ public class PlayerController : MonoBehaviour
     private void RespawnTransition()
     {
         // EYES CLOSED EFFECT 
+        
         CameraBlendEffectAnimator.Play("RespawnCameraBlending");
     }
     
