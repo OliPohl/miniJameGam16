@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerFlipModel;
     [SerializeField] private LayerMask groundLayer;
     private float Gravity  = 9.81f;
+    private float MovementThresholdTimer=0.0f;
     private bool isFacingRight = true;
     public bool isJumping = false;
     private Rigidbody rb;
@@ -47,10 +48,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
-       
-                
-        rb.velocity = new Vector2(PlayerDirection * speed, rb.velocity.y);
-        
+        rb.velocity = new Vector2(PlayerDirection*speed, rb.velocity.y);
     }
     
     private void Animate()

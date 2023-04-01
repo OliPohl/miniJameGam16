@@ -21,6 +21,10 @@ public class InputManager : MonoBehaviour
             PlayerController.Instance.PlayerDirection = context.ReadValue<Vector2>().x;
             
         }
+        if(context.canceled)
+        {
+            PlayerController.Instance.PlayerDirection = 0.0f;
+        }
     }
     public void OnJump(InputAction.CallbackContext context)
     {
