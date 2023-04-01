@@ -18,8 +18,19 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed)
         {
-            PlayerController.Instance.PlayerDirection= context.ReadValue<Vector2>();
+            PlayerController.Instance.PlayerDirection = context.ReadValue<Vector2>().x;
             
+        }
+    }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.performed && !(PlayerController.Instance.isJumping))
+        {
+            PlayerController.Instance.PlayerJump(1f);
+        }
+        if(context.canceled)
+        {
+            PlayerController.Instance.PlayerJump(0.5f);
         }
     }
     public void OnPause(InputAction.CallbackContext context)
