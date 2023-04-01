@@ -6,20 +6,30 @@ using UnityEngine.InputSystem;
 public class PlayerInteract : MonoBehaviour
 {
     [field: SerializeField] private bool _drawDebugGizmos = true;
-    [field: SerializeField] private  PlayerInventory _playerInventory;
+    private  PlayerInventory _playerInventory;
 
     public static IInteractable interactableObject { get; private set; }
     private GameObject currentObject;
 
+    public static PlayerInteract Instance;
 
-    private void OnInteract(InputAction.CallbackContext context)
+    private void Awake()
     {
-        if (context.performed)
+        if (Instance != null)
         {
-            if (interactableObject != null)
-            {
-                InteractWithObject(interactableObject);
-            }
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+
+    public void OnInteract()
+    {
+        if (interactableObject != null)
+        {
+            InteractWithObject(interactableObject);
         }
     }
 
@@ -63,5 +73,12 @@ public class PlayerInteract : MonoBehaviour
 
             Gizmos.DrawCube(transform.position, transform.localScale);
         }
+    }
+
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private float Gravity  = 9.81f;
     private float MovementThresholdTimer=0.0f;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     public bool isJumping = false;
     private Rigidbody rb;
     private Quaternion localRot = Quaternion.Euler(0, 0, 0);

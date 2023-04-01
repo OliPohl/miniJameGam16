@@ -9,7 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [field: SerializeField] private bool _drawDebugGizmos = true;
     public GameObject Item { get; private set; }
     public static PlayerInventory Instance;
-    public float throwPower = 5f;
+    public float throwPower = 1000f;
 
 
     private void Awake()
@@ -21,6 +21,16 @@ public class PlayerInventory : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+
+    void FixedUpdate() 
+    {
+        if(Item != null)
+        {
+            if (Vector3.Distance(transform.localPosition, Vector3.zero) < 0.01f)
+                Item.transform.localPosition = Vector3.MoveTowards(Item.transform.localPosition, Vector3.zero, Time.deltaTime);
+        }
     }
 
 
@@ -53,7 +63,15 @@ public class PlayerInventory : MonoBehaviour
 
         Obj.transform.SetParent(null);
         Item = null;
-        objRB.AddForce(transform.forward * throwPower);
+        // Obj.transform.position = Obj.transform.position * 1;
+        float dir;
+        
+        if(PlayerController.Instance.isFacingRight)
+            dir = 1;
+        else
+            dir = -1;
+
+        objRB.AddForce(dir * throwPower, 0.3f * throwPower, 0f, ForceMode.Acceleration);
     }
 
 

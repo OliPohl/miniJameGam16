@@ -44,11 +44,12 @@ public class InputManager : MonoBehaviour
             // gamemanager.paused()
         }
     }
-    public void OnActions(InputAction.CallbackContext context)
+
+    public void OnInteract(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
-            // playerController.Action[x]();
+            PlayerInteract.Instance.OnInteract();
         }
     }
  }

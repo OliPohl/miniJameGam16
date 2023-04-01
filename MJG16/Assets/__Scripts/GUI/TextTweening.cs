@@ -22,7 +22,7 @@ public class TextTweening : MonoBehaviour
         if (_isTweening)
             Tween(Time.fixedDeltaTime);
         
-        if(PlayerInteract.interactableObject != null && PlayerInteract.interactableObject != currentInteractableObject)
+        if(PlayerInteract.interactableObject != null && (PlayerInteract.interactableObject != currentInteractableObject || PlayerInteract.interactableObject.Data() != Text))
         {
             SetText(PlayerInteract.interactableObject.Data());
             currentInteractableObject = PlayerInteract.interactableObject;
