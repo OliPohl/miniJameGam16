@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 118483567}
   - component: {fileID: 118483566}
   m_Layer: 6
-  m_Name: Obstacle (4)
-  m_TagString: Untagged
+  m_Name: Death
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ab716feabb628434e907020a145558cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -652,8 +652,8 @@ GameObject:
   - component: {fileID: 1771465050}
   - component: {fileID: 1771465049}
   m_Layer: 6
-  m_Name: Obstacle (3)
-  m_TagString: Untagged
+  m_Name: CheckPoint
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,7 +691,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 732c0bdf182142b4d8491ca4d368ee99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -729,7 +729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771465048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.8, y: 3.37, z: 0}
+  m_LocalPosition: {x: 21.1, y: 3.37, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -923,7 +923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084007461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.17, y: 4.68, z: 0}
+  m_LocalPosition: {x: 16.17, y: 1.33, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -985,10 +985,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9188837849055424971, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
-      propertyPath: jumpPower
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7d453e70f41b941bf2a05367cf0d3c, type: 3}
 --- !u!1001 &3404826441053231845
@@ -998,6 +994,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 991242812102024279, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3404826440291013024, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1040,22 +1040,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3404826440291013024, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3404826440291013025, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3404826440291013025, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3404826440291013025, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3404826440291013025, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}
-      propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3404826440291013027, guid: 19882cf33a4dbe142ba8d2fa725ab4bb, type: 3}

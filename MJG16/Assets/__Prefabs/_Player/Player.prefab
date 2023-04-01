@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9188837849055424971}
   - component: {fileID: 704863386}
   - component: {fileID: 1116103752}
+  - component: {fileID: 6171661041355328237}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,12 +81,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlipSpeedLerp: 10
   speed: 5
-  jumpPower: 5
+  jumpPower: 33
   groundcheck: {fileID: 6818532830551138894}
   playerFlipModel: {fileID: 7119064132419137324}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  CameraBlendEffectAnimator: {fileID: 0}
   isJumping: 0
 --- !u!114 &704863386
 MonoBehaviour:
@@ -214,6 +216,20 @@ CapsuleCollider:
   m_GameObject: {fileID: 1186498412071517825}
   m_Material: {fileID: 13400000, guid: 666d42fe6f375d54696e2ac0268e13a4, type: 2}
   m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.37
+  m_Height: 1.58
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!136 &6171661041355328237
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186498412071517825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.37
   m_Height: 1.58
