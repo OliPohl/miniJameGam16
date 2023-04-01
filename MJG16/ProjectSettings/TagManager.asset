@@ -8,6 +8,8 @@ TagManager:
   - InteractText
   - Interactable
   - Book
+  - Death
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
