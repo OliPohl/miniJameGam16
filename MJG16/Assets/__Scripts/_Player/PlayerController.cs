@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Quaternion localRot = Quaternion.Euler(0, 0, 0);
     private float timer = 0;
     public float jumpOffset = 0.1f;
+    private float danceCoolDown = 0.0f;
 
     private void Awake()
     {
@@ -77,12 +78,24 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Jumping");
             isJumping = false;
         }
-        // if jumping trigger jump
-        // if pickup trigger pickup
-        // if running (velocity > 1 Bool is running)
-        // if life < 0 isdying
-        // if action.Dance > random dance
-        // if action.throw > set trigger Throwing
+        if(PlayerDirection ==0){
+            danceCoolDown += Time.fixedDeltaTime;
+        }else{
+            danceCoolDown =0;
+        }
+        if(danceCoolDown >= 4.0f)
+        {
+            animator.SetTrigger("Dancing");
+            danceCoolDown = 0.0f;
+        }
+    }
+    public void SetAnimatorPickup()
+    {
+        animator.SetTrigger("Pickup");
+    }
+    public void SetAnimatorThrow()
+    {
+        animator.SetTrigger("throwing");
     }
     private bool isGrounded()
     {

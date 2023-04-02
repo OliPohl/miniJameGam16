@@ -53,6 +53,7 @@ public class PlayerInventory : MonoBehaviour
             Item.GetComponent<Rigidbody>().isKinematic = true;
             Item.transform.SetParent(transform);
             Item.GetComponentsInChildren<Collider>().Any(x => x.enabled = false);
+            PlayerController.Instance.SetAnimatorPickup();
         }
     }
 
@@ -74,6 +75,7 @@ public class PlayerInventory : MonoBehaviour
             dir = -1;
 
         objRB.AddForce(dir * throwPower, 0.3f * throwPower, 0f, ForceMode.Acceleration);
+        PlayerController.Instance.SetAnimatorThrow();
     }
 
     public void StartFire()
