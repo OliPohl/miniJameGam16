@@ -6,6 +6,9 @@ using UnityEngine;
 public class DucttapeDraw : MonoBehaviour
 {
     // DRAW WITH MOUSE INPUT DUCT TAPE 
+    // SOUND
+    
+    private AudioClips _audioClips => SoundManager.AudioClips;
     public static DucttapeDraw Instance;
     [SerializeField] GameObject ductTapeSpawnObject;
     [SerializeField] GameObject EpicBoxColliderObject;
@@ -35,13 +38,13 @@ public class DucttapeDraw : MonoBehaviour
     public void ButtonChange(bool value)
     {
         isButtonPressed = value;
-        Debug.Log("isButtonPressed:"+ isButtonPressed);
+        // Debug.Log("isButtonPressed:"+ isButtonPressed);
     }
     public void OnTaping()
     {
         if (isButtonPressed)
         {
-            Debug.Log(" tapes: " + currentTapes + " currenttapeLength: "+currentTapeLength);
+            // Debug.Log(" tapes: " + currentTapes + " currenttapeLength: "+currentTapeLength);
             if(currentTapes <= maxTapes)
             {
                 if (currentDuctTape == null  || currentTapeLength > maxTapeLength)
@@ -49,6 +52,8 @@ public class DucttapeDraw : MonoBehaviour
                     // CREATE NEW TAPE ///
                     currentDuctTape = Instantiate(ductTapeSpawnObject, Vector3.zero, Quaternion.identity);
                     GameObject temp = Instantiate(EpicBoxColliderObject, Vector3.zero, Quaternion.identity);
+                    // PLAY Sound
+                    SoundManager.Instance.PlayAudio(_audioClips.ducttape);
                     Vector3 tempPos = GetMousePosition();
                     tempPos.z  = PlayerController.Instance.ZPosition();
                     temp.transform.position = tempPos;
