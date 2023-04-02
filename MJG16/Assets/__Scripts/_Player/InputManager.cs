@@ -45,7 +45,18 @@ public class InputManager : MonoBehaviour
             // gamemanager.paused()
         }
     }
-
+    public void OnDrawTape(InputAction.CallbackContext context)
+    {
+        
+        if(context.performed)
+        {
+            DucttapeDraw.Instance.OnTaping();
+        }
+         if(context.canceled)
+        {
+            DucttapeDraw.Instance.OnTaping();
+        }
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         if(context.performed)
