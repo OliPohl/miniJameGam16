@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject player;
    
     public Vector2 camX;
+
+    public float offsetY = 0;
     public Vector2 camY;
     private float CamZ;
     private void Start() {
@@ -16,6 +18,6 @@ public class CameraController : MonoBehaviour
    private void FixedUpdate() {
     float x = Mathf.Clamp(player.transform.position.x, camX.x, camX.y);
     float y = Mathf.Clamp(player.transform.position.y, camY.x,camY.y);
-    gameObject.transform.position = new Vector3 (x,y, CamZ);
+    gameObject.transform.position = new Vector3 (x,y + offsetY, CamZ);
    }
 }

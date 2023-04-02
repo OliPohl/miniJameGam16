@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542290175085129792}
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -0, z: 0.01307}
+  m_LocalPosition: {x: 0, y: 0, z: 1.093}
   m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.42830187, b: 0.42830187, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 2.02
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4022535158851060488}
   - component: {fileID: 35239345016884397}
   - component: {fileID: 2853530326247520359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mushroom4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
