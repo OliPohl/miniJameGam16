@@ -11,13 +11,21 @@ public class CameraController : MonoBehaviour
     public float offsetY = 0;
     public Vector2 camY;
     private float CamZ;
-    private void Start() {
+
+    public bool camLock = false;
+
+    private void Start() 
+    {
         CamZ = gameObject.transform.position.z;
     }
     
-   private void FixedUpdate() {
-    float x = Mathf.Clamp(player.transform.position.x, camX.x, camX.y);
-    float y = Mathf.Clamp(player.transform.position.y, camY.x,camY.y);
-    gameObject.transform.position = new Vector3 (x,y + offsetY, CamZ);
-   }
+    private void FixedUpdate() 
+    {
+         if(!(camLock))
+         {
+             float x = Mathf.Clamp(player.transform.position.x, camX.x, camX.y);
+             float y = Mathf.Clamp(player.transform.position.y, camY.x,camY.y);
+             gameObject.transform.position = new Vector3 (x,y + offsetY, CamZ);
+         }
+    }
 }
