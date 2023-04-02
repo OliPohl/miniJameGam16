@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed && !(PlayerController.Instance.isJumping))
         {
-            PlayerController.Instance.PlayerJump(1f);
+            PlayerController.Instance.PlayerJump();
         }
         // if(context.canceled)
         // {
