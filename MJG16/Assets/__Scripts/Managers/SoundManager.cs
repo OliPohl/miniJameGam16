@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void PlayAudio(AudioClip AudioClip)                 // use this to play audio that has no position
+    public void PlayAudio(AudioClip AudioClip)                 // use this to play audio that has no position
     {
         if (cameraAudioSource != null && AudioClip != null)
             cameraAudioSource.volume = _settings.MasterVolume;
@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void PlayAudioAtPosition(AudioClip AudioClip, Vector3 AudioPosition)    // use this for Audio that comes from a specific location
+    public void PlayAudioAtPosition(AudioClip AudioClip, Vector3 AudioPosition)    // use this for Audio that comes from a specific location
     {
         if (AudioClip != null  && AudioPosition != null)
         {
@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour
 
     // in the line where you want to play a general audio:
     // -
-    // SoundManager.Instance.PlayAudio(_audioClips.SOUND);
+    // SoundManager.Instance.PlayAudio(_audioClips.achievement);
 
     // in the line where you want to play audio at a specific location:
     // -

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    private AudioClips _audioClips => SoundManager.AudioClips;
     public static MenuManager Instance;
     public GameObject _book;
     public GameObject _achieve;
@@ -57,6 +58,7 @@ public class MenuManager : MonoBehaviour
             || achievement3 != achievement3Save 
             || achievement5 != achievement5Save)
         {
+            SoundManager.Instance.PlayAudio(_audioClips.achievement);
             trigger = true;
             timer = 0;
             stage1 = false;
@@ -78,6 +80,7 @@ public class MenuManager : MonoBehaviour
 
     public void ToggleBook()
     {
+        SoundManager.Instance.PlayAudio(_audioClips.book);
         if(_book.activeSelf == false && !(endTriggerd)) 
         {
             _book.SetActive(true);

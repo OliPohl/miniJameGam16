@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9741ac53cee6f24f98ce6f5f2336d5a, type: 3}
   m_Name: AudioClips
   m_EditorClassIdentifier: 
-  <ButtonPress>k__BackingField: {fileID: 0}
+  <Footsteps>k__BackingField:
+  - {fileID: 8300000, guid: 3481912883660f54e8b23f69c29c624c, type: 3}
+  - {fileID: 8300000, guid: 4ce3cee9a8f56554b838fd9a38d7f28f, type: 3}
+  - {fileID: 8300000, guid: 06055c91ec533ff4d947f2852811e138, type: 3}
+  - {fileID: 8300000, guid: 93bad5e4c6dfb9a4da13abde4f979a77, type: 3}
+  - {fileID: 8300000, guid: a8e844e6a955fbf40aacac4b0f63d6f4, type: 3}
+  - {fileID: 8300000, guid: 910cc04d7c4864043a6e7426071c0c10, type: 3}
+  - {fileID: 8300000, guid: 14b790f38bfc1c4429e15d0ee1eeff01, type: 3}
+  <book>k__BackingField: {fileID: 8300000, guid: 5adb8671b369afe41b3f2c2e78522569, type: 3}
+  <breaking>k__BackingField: {fileID: 8300000, guid: 5d1f4c116f3b46c4689d422d083a36da, type: 3}
+  <ducttape>k__BackingField: {fileID: 8300000, guid: 8a5880379c02d2343bd04c803e62b286, type: 3}
+  <fall>k__BackingField: {fileID: 8300000, guid: 6debce8a68c20264db5cb9ae7993a099, type: 3}
+  <fire>k__BackingField: {fileID: 8300000, guid: 87135722d218dc3489c51cab6f149bc1, type: 3}
+  <achievement>k__BackingField: {fileID: 8300000, guid: 504ea7088b31d0e4ca30eaaf7abe827f, type: 3}
+  <wind>k__BackingField: {fileID: 8300000, guid: 69a3cdefaf3f82e4196f97ab58466541, type: 3}
