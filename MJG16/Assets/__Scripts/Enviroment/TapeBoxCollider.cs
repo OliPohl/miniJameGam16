@@ -20,7 +20,7 @@ public class TapeBoxCollider : MonoBehaviour
 
         if (other.CompareTag("MovingPlatform"))
         {
-            Debug.Log("Gotcha");
+            // Debug.Log("Gotcha");
             other.GetComponent<Animator>().speed = 0.0f;
             obstacle = other.gameObject;
         }
