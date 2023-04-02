@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Wood : MonoBehaviour
 {
+    private AudioClips _audioClips => SoundManager.AudioClips;
     public List<GameObject> woodPlanks; 
     public GameObject particles;
     private float timer = 0;
@@ -20,6 +21,7 @@ public class Wood : MonoBehaviour
             particles.SetActive(true);
             timer += Time.deltaTime;
             MenuManager.Instance.achievement2 = true;
+            SoundManager.Instance.PlayAudioAtPosition(_audioClips.fire, transform.position);
 
             if(timer > burnTime)
             {
@@ -28,6 +30,7 @@ public class Wood : MonoBehaviour
                     Rigidbody objRB = obj.GetComponent<Rigidbody>();
                     objRB.isKinematic = false;
                 }
+                SoundManager.Instance.PlayAudioAtPosition(_audioClips.breaking, transform.position);
                 particles.SetActive(false);
                 Destroy(this);
             }
