@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public bool isJumping = false;
     private Rigidbody rb;
     private Quaternion localRot = Quaternion.Euler(0, 0, 0);
+    private float timer = 0;
+    public float jumpOffset = 0.1f;
 
     private void Awake()
     {
@@ -110,21 +112,20 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    public void PlayerJump(float jumpModifier)
+    public void PlayerJump()
     {
 
         if (isGrounded())
         {
-
-            isJumping = true;
-            Vector3 vel = transform.up * jumpPower;
-            rb.AddForce(rb.velocity + vel, ForceMode.Impulse);
-        }
-        if (jumpModifier == 0.5f)
-        {
-
-            isJumping = false;
-            // rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpPower* jumpModifier);
+            if(timer < Time.time)
+            {                
+                isJumping = true;
+                Vector3 vel = transform.up * jumpPower;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero; 
+                rb.AddForce(rb.velocity + vel, ForceMode.Impulse);
+                timer = Time.time + jumpOffset;
+            }
         }
     }
     // actions / actionmap
