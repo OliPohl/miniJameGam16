@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb87a2a58fe573f4f86eb19daadf7dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MousePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &9188837849055424971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,10 +139,10 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1116103754}
-        m_TargetAssemblyTypeName: DucttapeDraw, Assembly-CSharp
-        m_MethodName: OnTaping
-        m_Mode: 1
+      - m_Target: {fileID: 1523960434790029564}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnDrawTape
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -172,10 +173,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b1b8ab80-5646-4a41-a8e6-f6f521bd396b
     m_ActionName: Player/Pickup[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3f9f7c58-b404-4a11-a58c-937ed1b2e4d5
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1523960434790029564}
@@ -208,10 +205,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7608cd8b-c720-4e18-ba69-27dc4191e58f
     m_ActionName: Player/Menu[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1d49273e-88f0-4a4b-b031-bc1e46126236
-    m_ActionName: UI/Close[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -257,8 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268433d302fd0924c877103c75293ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ductTapeObject: {fileID: 7705022213118561537, guid: ee01d7f52eab15042b883e5918368f73, type: 3}
-  mousePositions: []
+  ductTapeSpawnObject: {fileID: 7705022213118561537, guid: ee01d7f52eab15042b883e5918368f73, type: 3}
+  EpicBoxColliderObject: {fileID: 584159830848779436, guid: 6c79b77e15972e84db5d16a643ac1d50, type: 3}
+  maxTapes: 5
   maxTapeLength: 100
 --- !u!1 &8804738631009038834
 GameObject:
