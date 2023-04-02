@@ -12,7 +12,7 @@ public class DucttapeDraw : MonoBehaviour
     public static DucttapeDraw Instance;
     [SerializeField] GameObject ductTapeSpawnObject;
     [SerializeField] GameObject EpicBoxColliderObject;
-    public GameObject currentDuctTape;
+    private GameObject currentDuctTape;
     private LineRenderer lineRenderer;
     private bool isButtonPressed;
     // VARS FOR DUCT TAPE 

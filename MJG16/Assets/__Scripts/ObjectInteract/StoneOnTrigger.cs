@@ -11,9 +11,11 @@ public class StoneOnTrigger : MonoBehaviour
             // Debug.Log(other.transform.parent);
             foreach (Transform item in other.transform.parent)
             {
-                item.GetComponent<Rigidbody>().isKinematic =false;
+                item.GetComponent<Rigidbody>().isKinematic=false;
                 item.GetComponent<Rigidbody>().useGravity= true;
+
             }
+            MenuManager.Instance.achievement3 =true;
         }
     }
 }

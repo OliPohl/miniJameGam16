@@ -13,6 +13,7 @@ TagManager:
   - Wood
   - MovingPlatform
   - Obstacle
+  - GlassHouse
   layers:
   - Default
   - TransparentFX
