@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour
         GameObject musicPlayer = new GameObject("MusicPlayer");
         musicPlayer.transform.SetParent(Camera.main.transform);
         musicSource = musicPlayer.AddComponent<AudioSource>();
+        ChangeMusic(_audioClips.ambient);
     }
 
 

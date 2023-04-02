@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190891512179f474cb3e5b9af27b9df0, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  <MasterVolume>k__BackingField: 0.3
+  <MasterVolume>k__BackingField: 0.509
