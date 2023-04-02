@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1289304799249114677}
   - component: {fileID: 3891233960682050303}
   - component: {fileID: 5903213587512494953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stalactite_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

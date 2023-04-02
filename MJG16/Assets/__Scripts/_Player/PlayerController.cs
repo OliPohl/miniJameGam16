@@ -155,10 +155,21 @@ public class PlayerController : MonoBehaviour
         {
             OnDeath();
         }
+        if (other.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(other.transform);
+        }
         if (other.CompareTag("CheckPoint"))
         {
             PlayerLastCheckPoint = other.gameObject.transform;
             Debug.Log("CheckPointSystem: Updated - New CheckPoint");
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(null);
         }
     }
 }

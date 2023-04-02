@@ -11,6 +11,7 @@ TagManager:
   - Death
   - CheckPoint
   - Wood
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
