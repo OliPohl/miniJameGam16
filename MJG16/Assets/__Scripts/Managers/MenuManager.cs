@@ -14,7 +14,6 @@ public class MenuManager : MonoBehaviour
     public GameObject achievement1Obj;
     public GameObject achievement2Obj;
     public GameObject achievement3Obj;
-    public GameObject achievement4Obj;
     public GameObject achievement5Obj;
 
     public bool achievement1 = false;
@@ -29,7 +28,6 @@ public class MenuManager : MonoBehaviour
 
     private bool stage1 = false;
     private float timer = 0;
-    public float maxTime = 3f;
     private bool trigger = false;
 
 
