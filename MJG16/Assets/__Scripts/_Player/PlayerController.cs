@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Quaternion localRot = Quaternion.Euler(0, 0, 0);
     private float timer = 0;
-    public float jumpOffset = 0.2f;
+    public float jumpOffset = 0.1f;
 
     private void Awake()
     {
