@@ -46,7 +46,6 @@ public class PlayerInteract : MonoBehaviour
         {
             currentObject = other.gameObject;
             interactableObject = other.GetComponent<IInteractable>();
-            Debug.Log(interactableObject);
         }
     }
 
