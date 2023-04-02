@@ -12,6 +12,7 @@ TagManager:
   - CheckPoint
   - Wood
   - MovingPlatform
+  - Obstacle
   layers:
   - Default
   - TransparentFX

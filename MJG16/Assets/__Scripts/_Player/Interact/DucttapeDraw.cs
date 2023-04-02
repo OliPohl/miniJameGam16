@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(TrailRenderer))]
+[RequireComponent(typeof(EdgeCollider2D))]
 public class DucttapeDraw : MonoBehaviour
 {
-   // DRAW WITH MOUSE INPUT DUCT TAPE 
-   public static DucttapeDraw Instance;
-   [SerializeField] GameObject ductTapeObject;
-   [SerializeField] private List<Vector2> mousePositions  = new List<Vector2>();
-   private GameObject currentDuctTape;
-   private LineRenderer lineRenderer;
-   private EdgeCollider2D edgeCollider2D;
-   private int currentDuctTapePoint;
-   private bool isButtonPressed;
-   // VARS FOR DUCT TAPE 
-   private float tapeLength=0.0f;
-   [SerializeField] private float maxTapeLength=100;
+    // DRAW WITH MOUSE INPUT DUCT TAPE 
+    public static DucttapeDraw Instance;
+    [SerializeField] GameObject ductTapeSpawnObject;
+    [SerializeField] GameObject EpicBoxColliderObject;
+    public GameObject currentDuctTape;
+    private LineRenderer lineRenderer;
+    private bool isButtonPressed;
+    // VARS FOR DUCT TAPE 
+    public int currentTapes { get; set; } = 0;
     
+    [SerializeField] private int maxTapes = 5;
+    [SerializeField] private float maxTapeLength = 3; // how many steps
+    private int currentTapeLength = 0;
+    private Camera cam;
     private void Awake()
     {
         if (Instance != null)
@@ -26,67 +28,74 @@ public class DucttapeDraw : MonoBehaviour
         }
         Instance = this;
         isButtonPressed = false;
+        currentDuctTape = null;
+        cam = Camera.main;
+        
     }
-    public void OnTaping() {
-        isButtonPressed = !isButtonPressed;
-        if(currentDuctTape == null && isButtonPressed)
+    public void ButtonChange(bool value)
+    {
+        isButtonPressed = value;
+        Debug.Log("isButtonPressed:"+ isButtonPressed);
+    }
+    public void OnTaping()
+    {
+        if (isButtonPressed)
         {
-            //CreateTape();
-        }else{
-            Vector2 tempPos =  GetMousePosition();
-            if(Vector2.Distance(tempPos,mousePositions[mousePositions.Count -1])>0.25f)
+            Debug.Log(" tapes: " + currentTapes + " currenttapeLength: "+currentTapeLength);
+            if(currentTapes <= maxTapes)
             {
-                //UpdateTape(tempPos);
+                if (currentDuctTape == null  || currentTapeLength > maxTapeLength)
+                {
+                    // CREATE NEW TAPE ///
+                    currentDuctTape = Instantiate(ductTapeSpawnObject, Vector3.zero, Quaternion.identity);
+                    GameObject temp = Instantiate(EpicBoxColliderObject, Vector3.zero, Quaternion.identity);
+                    Vector3 tempPos = GetMousePosition();
+                    tempPos.z  = PlayerController.Instance.ZPosition();
+                    temp.transform.position = tempPos;
+                    lineRenderer = currentDuctTape.GetComponent<LineRenderer>();
+                    currentTapeLength = 0;
+                    currentTapes++;
+                    // POSITION ZERO
+                    
+                    lineRenderer.positionCount = 1;
+                    lineRenderer.SetPosition(0,GetMousePosition());
+                    currentTapeLength++;
+                    
+                }
+            if (currentDuctTape != null && currentTapeLength < maxTapeLength)
+            {
+                // ON UPDATING CURRENT TAPE///
+                
+                if (Vector2.Distance(GetMousePosition(), lineRenderer.GetPosition(currentTapeLength-1)) > 0.25f &&
+                (Vector2.Distance(lineRenderer.GetPosition(0), lineRenderer.GetPosition(currentTapeLength-1)) < maxTapeLength))
+                    {
+                        lineRenderer.positionCount = currentTapeLength+1;
+                        lineRenderer.SetPosition(currentTapeLength, GetMousePosition());
+                        GameObject temp = Instantiate(EpicBoxColliderObject, Vector3.zero, Quaternion.identity);
+                        Vector3 tempPos = GetMousePosition();
+                        tempPos.z  = PlayerController.Instance.ZPosition();
+                        temp.transform.position = tempPos;
+                        currentTapeLength++;
+                        
+                        
+                    }
             }
-        }
+            }
+        }else{
+        currentDuctTape = null;}
     }
-    // private void FixedUpdate() {
     
-    //     if(tapeLength < maxTapeLength  && isButtonPressed)
-    //     {
-    //         Vector2 tempPos =  GetMousePosition();
-    //         if(Vector2.Distance(tempPos,mousePositions[mousePositions.Count -1])>0.25f)
-    //         {
-    //             UpdateTape(tempPos);
-    //         }
-    //     }
-    // }
-    private void CreateTape()
+    private Vector3 GetMousePosition()
     {
-        Debug.Log ("Create New Tape");
-        currentDuctTape = Instantiate(ductTapeObject, Vector3.zero, Quaternion.identity);
-        lineRenderer = currentDuctTape.GetComponent<LineRenderer>();
-        edgeCollider2D = currentDuctTape.GetComponent<EdgeCollider2D>();
         
-        mousePositions.Add( GetMousePosition());
-        mousePositions.Add( GetMousePosition(1.0f));
-        lineRenderer.SetPosition(0, mousePositions[0]);
-        lineRenderer.SetPosition(1, mousePositions[1]);
-
-        edgeCollider2D.points = mousePositions.ToArray();
-        currentDuctTapePoint =2;
-        
+        Vector3 position = Input.mousePosition;
+        position.z = 10;
+        return cam.ScreenToWorldPoint(position);
     }
-    private void UpdateTape(Vector2 newTapePos)
+
+    private void FixedUpdate()
     {
-        mousePositions.Add(newTapePos);
-        lineRenderer.positionCount ++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, newTapePos);
-        edgeCollider2D.points = mousePositions.ToArray();
-        currentDuctTapePoint ++;
-        tapeLength += Vector2.Distance(mousePositions[currentDuctTapePoint], mousePositions[currentDuctTapePoint -1]);
-
-    }
-     private Vector3 GetMousePosition() {
-        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldMousePosition.z = 0;
-
-        return worldMousePosition;
-    }
-    private Vector3 GetMousePosition(float offset) {
-        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldMousePosition.z = 0;
-        worldMousePosition.x += offset;
-        return worldMousePosition;
+        OnTaping();
+        
     }
 }
