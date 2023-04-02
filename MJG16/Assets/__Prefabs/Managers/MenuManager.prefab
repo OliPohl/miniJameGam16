@@ -49,11 +49,10 @@ MonoBehaviour:
   achievement1Obj: {fileID: 0}
   achievement2Obj: {fileID: 0}
   achievement3Obj: {fileID: 0}
-  achievement4Obj: {fileID: 0}
   achievement5Obj: {fileID: 0}
+  endScreen: {fileID: 0}
   achievement1: 0
   achievement2: 0
   achievement3: 0
-  achievement4: 0
   achievement5: 0
-  maxTime: 3
+  endTriggerd: 0

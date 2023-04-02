@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     public GameObject achievement2Obj;
     public GameObject achievement3Obj;
     public GameObject achievement5Obj;
+    public GameObject endScreen;
 
     public bool achievement1 = false;
     public bool achievement2 = false;
@@ -29,6 +30,8 @@ public class MenuManager : MonoBehaviour
     private bool stage1 = false;
     private float timer = 0;
     private bool trigger = false;
+
+    public bool endTriggerd = false;
 
 
     private void Awake()
@@ -64,18 +67,24 @@ public class MenuManager : MonoBehaviour
         {
             Achieving();
         }
+
+        if(endTriggerd)
+        {
+            endScreen.SetActive(true);
+            _book.SetActive(false);
+            Time.timeScale = 0f;
+        }
     }
 
     public void ToggleBook()
     {
-        Debug.Log(_book);
-        if(_book.activeSelf == false) 
+        if(_book.activeSelf == false && !(endTriggerd)) 
         {
             _book.SetActive(true);
             Time.timeScale = 0f;
             // playerInput.SwitchCurrentActionMap("UI");
         }
-        else
+        else if(!(endTriggerd))
         {
             _book.SetActive(false);
             Time.timeScale = 1f;
