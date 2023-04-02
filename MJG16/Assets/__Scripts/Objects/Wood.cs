@@ -18,10 +18,13 @@ public class Wood : MonoBehaviour
     {
         if(PlayerInventory.Instance.onFire)
         {
+            if(timer <= Time.deltaTime)
+                SoundManager.Instance.PlayAudioAtPosition(_audioClips.fire, transform.position);
+
             particles.SetActive(true);
             timer += Time.deltaTime;
             MenuManager.Instance.achievement2 = true;
-            SoundManager.Instance.PlayAudioAtPosition(_audioClips.fire, transform.position);
+
 
             if(timer > burnTime)
             {
