@@ -914,11 +914,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 861793228687873390, guid: 632743310fc3b4b48b873bcf4d13ab6d, type: 3}
   m_PrefabInstance: {fileID: 1391442473}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2069199292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8783472449774969771, guid: 632743310fc3b4b48b873bcf4d13ab6d, type: 3}
-  m_PrefabInstance: {fileID: 1391442473}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2091084977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5970673311759418606, guid: 632743310fc3b4b48b873bcf4d13ab6d, type: 3}
@@ -1225,7 +1220,7 @@ PrefabInstance:
     - target: {fileID: 3670456241088616674, guid: fe9b2c765b22bb543a0f415d7f91443f, type: 3}
       propertyPath: achievement4Obj
       value: 
-      objectReference: {fileID: 2069199292}
+      objectReference: {fileID: 0}
     - target: {fileID: 3670456241088616674, guid: fe9b2c765b22bb543a0f415d7f91443f, type: 3}
       propertyPath: achievement5Obj
       value: 
