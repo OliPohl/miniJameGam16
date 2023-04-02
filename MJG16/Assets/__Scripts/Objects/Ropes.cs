@@ -18,6 +18,7 @@ public class Ropes : MonoBehaviour
                 Rigidbody objRB = obj.GetComponent<Rigidbody>();
                 objRB.isKinematic = false;
             }
+            MenuManager.Instance.achievement5 = true;
         }
     }
 }

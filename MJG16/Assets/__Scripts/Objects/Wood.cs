@@ -19,6 +19,7 @@ public class Wood : MonoBehaviour
         {
             particles.SetActive(true);
             timer += Time.deltaTime;
+            MenuManager.Instance.achievement2 = true;
 
             if(timer > burnTime)
             {
