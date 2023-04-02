@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float PlayerDirection { get; set; }
     public Transform PlayerLastCheckPoint { get; set; }
-    
+    public float ZPosition() {return this.transform.position.z;}
     public static PlayerController Instance;
     private Animator animator;
     // PLAYER VARS
@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerFlipModel;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator CameraBlendEffectAnimator;
-    private float Gravity = 9.81f;
-    private float MovementThresholdTimer = 0.0f;
+    // private float Gravity = 9.81f;
+    // private float MovementThresholdTimer = 0.0f;
     public bool isFacingRight = false;
     public bool isJumping = false;
     private Rigidbody rb;

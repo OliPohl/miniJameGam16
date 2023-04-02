@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
+    public Vector3 MousePosition;
     private void Awake() {
         if(Instance != null)
         {
@@ -33,10 +34,10 @@ public class InputManager : MonoBehaviour
         {
             PlayerController.Instance.PlayerJump(1f);
         }
-        if(context.canceled)
-        {
-            PlayerController.Instance.PlayerJump(0.5f);
-        }
+        // if(context.canceled)
+        // {
+        //     PlayerController.Instance.PlayerJump(0.5f);
+        // }
     }
     public void OnPause(InputAction.CallbackContext context)
     {
@@ -45,16 +46,39 @@ public class InputManager : MonoBehaviour
             // gamemanager.paused()
         }
     }
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        if (context.control.device is Mouse)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(context.ReadValue<Vector2>());
+            if (Physics.Raycast(ray, out RaycastHit hit, 50f, LayerMask.GetMask("Default")))
+            {
+                MousePosition = hit.point;
+            }
+            
+        }
+        else if (context.control.device is Gamepad)
+        {
+            Vector2 input = context.ReadValue<Vector2>();
+            MousePosition = new Vector3(input.x, 0f, input.y) * 5;
+            Ray ray = Camera.main.ScreenPointToRay(MousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, 50f, LayerMask.GetMask("Default")))
+            {
+                MousePosition = hit.point;
+            }
+            
+        }
+    }
     public void OnDrawTape(InputAction.CallbackContext context)
     {
         
         if(context.performed)
         {
-            DucttapeDraw.Instance.OnTaping();
+            DucttapeDraw.Instance.ButtonChange(true);
         }
          if(context.canceled)
         {
-            DucttapeDraw.Instance.OnTaping();
+            DucttapeDraw.Instance.ButtonChange(false);
         }
     }
     public void OnInteract(InputAction.CallbackContext context)
