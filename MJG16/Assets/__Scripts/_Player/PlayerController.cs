@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Animate();
         Flip();
-        Debug.Log(isGrounded());
+        
     }
     private void Move()
     {
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     private void OnDeath()
     {
         RespawnTransition();
-        RespawnPlayer();
+        
         // respawn to lastCheckPoint
         // reset FaceOrientation
         isFacingRight = false;
@@ -145,12 +145,15 @@ public class PlayerController : MonoBehaviour
     private void RespawnPlayer()
     {
         gameObject.transform.position = PlayerLastCheckPoint.position;
+        CameraBlendEffectAnimator.gameObject.SetActive(false);
     }
     private void RespawnTransition()
     {
         // EYES CLOSED EFFECT 
-        
+        CameraBlendEffectAnimator.gameObject.SetActive(true);
         CameraBlendEffectAnimator.Play("RespawnCameraBlending");
+        RespawnPlayer();
+        
     }
     
     private void OnTriggerEnter(Collider other)

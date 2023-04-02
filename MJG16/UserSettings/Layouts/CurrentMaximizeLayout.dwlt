@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fc700100
-      m_LastClickedID: 94460
-      m_ExpandedIDs: 3c11fcffb292fcff98defcff14e2fcffa2e5fcffd2edfcff4af1fcffe8f5fcffbc18fdff942dfeff34fbffffe25c0000225d0000cc700100fc700100327101004271010054720100a8730100
+      m_SelectedIDs: f2e1fcff
+      m_LastClickedID: -204302
+      m_ExpandedIDs: e85cfbff42d8fbff3c11fcff3221fcffb292fcff50d4fcff58defcff98defcff14e2fcffa2e5fcffd2edfcff4af1fcffe8f5fcffbc18fdff942dfeff34fbffffe25c0000225d0000cc700100327101004271010054720100a8730100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 728
     height: 697
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 168.99248, y: -0.30580834, z: 17.519955}
+    m_Target: {x: 5.57452, y: -0.07751536, z: -4.798544}
     speed: 2
-    m_Value: {x: 168.99248, y: -0.30580834, z: 17.519955}
+    m_Value: {x: 5.57452, y: -0.07751536, z: -4.798544}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -586,13 +586,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.122259, y: -0.24101718, z: 0.030465884, w: 0.96250755}
+    m_Target: {x: -0.17961384, y: -0.38790894, z: 0.077414945, w: -0.90096617}
     speed: 2
-    m_Value: {x: 0.12223544, y: -0.24097073, z: 0.030460013, w: 0.96232206}
+    m_Value: {x: -0.17957187, y: -0.38781828, z: 0.077396855, w: -0.9007556}
   m_Size:
-    m_Target: 12.124355
+    m_Target: 3.5362349
     speed: 2
-    m_Value: 12.124355
+    m_Value: 3.5362349
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -872,21 +872,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/__Prefabs/Obstacles
+    - Assets/__Prefabs/_Player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/__Prefabs/Obstacles
+  - Assets/__Prefabs/_Player
   m_LastFoldersGridSize: 96
   m_LastProjectPath: "C:\\Users\\Robert M\xF6genburg\\Documents\\GitHub\\miniJameGam16\\MJG16"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 135}
-    m_SelectedIDs: 1a610000
-    m_LastClickedID: 24858
+    scrollPos: {x: 0, y: 75}
+    m_SelectedIDs: 7e600000
+    m_LastClickedID: 24702
     m_ExpandedIDs: 0000000010600000126000001460000016600000186000001a6000001c600000a260000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -940,8 +940,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: fc700100
-    m_LastClickedInstanceID: 94460
+    m_SelectedInstanceIDs: f2e1fcff
+    m_LastClickedInstanceID: -204302
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300007e96000094980000
     m_RenameOverlay:
@@ -1029,7 +1029,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 94460
+  m_LastSelectedObjectID: -327274
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52

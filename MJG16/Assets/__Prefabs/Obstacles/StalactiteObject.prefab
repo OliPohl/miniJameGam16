@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4995439981136625429}
   m_Layer: 6
   m_Name: stalactite_platform
-  m_TagString: Obstacle
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
