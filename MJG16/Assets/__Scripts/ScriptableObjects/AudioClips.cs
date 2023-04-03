@@ -12,4 +12,5 @@ public class AudioClips : ScriptableObject
     [field: SerializeField] public AudioClip achievement { get; private set; }
     [field: SerializeField] public AudioClip wind { get; private set; }
     [field: SerializeField] public AudioClip ambient { get; private set; }
+    [field: SerializeField] public AudioClip mushrooms { get; private set; }
 }

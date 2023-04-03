@@ -6,7 +6,7 @@ public class FaceChanger : MonoBehaviour
 {
     [SerializeField] private Texture2D[] faceAnim;
     [SerializeField] private Texture2D faceDeathAnim;
-    private float timestep  = 0.1f;
+    private float timestep  = 0.2f;
     private float temp = 0.0f;
     private int county=0;
     private Renderer _renderPlayer;

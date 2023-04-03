@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4673117029891579342}
   - component: {fileID: 9160326402536205924}
   - component: {fileID: 2128028770}
+  - component: {fileID: 600637360587168368}
   m_Layer: 0
   m_Name: BoxColliderObject
   m_TagString: Untagged
@@ -76,3 +77,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TapeDuration: 3
+--- !u!114 &600637360587168368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584159830848779436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77b8d6a3dcbc1549833400c6c0a4706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

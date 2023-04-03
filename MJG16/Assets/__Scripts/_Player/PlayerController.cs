@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioClips _audioClips => SoundManager.AudioClips;
     public float PlayerDirection { get; set; }
     public Transform PlayerLastCheckPoint { get; set; }
     public float ZPosition() {return this.transform.position.z;}
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
         /// FACING ANIMATION ///
         if (PlayerDirection < -0.2f || PlayerDirection > 0.2f)
         {
+            
             animator.SetBool("isRunning", true);
         }
         else

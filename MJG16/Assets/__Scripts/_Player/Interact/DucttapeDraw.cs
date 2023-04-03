@@ -38,13 +38,13 @@ public class DucttapeDraw : MonoBehaviour
     public void ButtonChange(bool value)
     {
         isButtonPressed = value;
-        // Debug.Log("isButtonPressed:"+ isButtonPressed);
+        
     }
     public void OnTaping()
     {
         if (isButtonPressed)
         {
-            // Debug.Log(" tapes: " + currentTapes + " currenttapeLength: "+currentTapeLength);
+            
             if(currentTapes <= maxTapes)
             {
                 if (currentDuctTape == null  || currentTapeLength > maxTapeLength)
@@ -94,7 +94,7 @@ public class DucttapeDraw : MonoBehaviour
     {
         
         Vector3 position = Input.mousePosition;
-        position.z = 10;
+        position.z = 6.9f;
         return cam.ScreenToWorldPoint(position);
     }
 

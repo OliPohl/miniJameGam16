@@ -26,3 +26,4 @@ MonoBehaviour:
   <achievement>k__BackingField: {fileID: 8300000, guid: 504ea7088b31d0e4ca30eaaf7abe827f, type: 3}
   <wind>k__BackingField: {fileID: 8300000, guid: 69a3cdefaf3f82e4196f97ab58466541, type: 3}
   <ambient>k__BackingField: {fileID: 8300000, guid: 67b566244dfccb749a6d0c36cc6ac48a, type: 3}
+  <mushrooms>k__BackingField: {fileID: 8300000, guid: b738dcba67661484b9cc7aae52c718f4, type: 3}
