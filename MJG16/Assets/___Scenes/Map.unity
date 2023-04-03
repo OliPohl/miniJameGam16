@@ -964,6 +964,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1667258395}
     m_Modifications:
+    - target: {fileID: 762297317194381286, guid: 4f2fc63e87a69cd4fb693e9239e41f60, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762297317194381286, guid: 4f2fc63e87a69cd4fb693e9239e41f60, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762297317194381286, guid: 4f2fc63e87a69cd4fb693e9239e41f60, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4569651336041491831, guid: 4f2fc63e87a69cd4fb693e9239e41f60, type: 3}
       propertyPath: m_Name
       value: Scissors
