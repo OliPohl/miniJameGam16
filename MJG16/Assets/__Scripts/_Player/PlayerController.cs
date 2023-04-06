@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private AudioClips _audioClips => SoundManager.AudioClips;
     public float PlayerDirection { get; set; }
+    public int PlayerDuctTapelength { get; set; }
     public Transform PlayerLastCheckPoint { get; set; }
     public float ZPosition() {return this.transform.position.z;}
     public static PlayerController Instance;

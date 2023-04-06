@@ -60,6 +60,7 @@ public class DucttapeDraw : MonoBehaviour
                     lineRenderer = currentDuctTape.GetComponent<LineRenderer>();
                     currentTapeLength = 0;
                     currentTapes++;
+                    PlayerController.Instance.PlayerDuctTapelength++;
                     // POSITION ZERO
                     
                     lineRenderer.positionCount = 1;
@@ -81,6 +82,7 @@ public class DucttapeDraw : MonoBehaviour
                         tempPos.z  = PlayerController.Instance.ZPosition();
                         temp.transform.position = tempPos;
                         currentTapeLength++;
+                        PlayerController.Instance.PlayerDuctTapelength++;
                         
                         
                     }
